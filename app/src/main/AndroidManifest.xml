@@ -12,11 +12,14 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:networkSecurityConfig="@xml/network_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Subscribes"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activitys.WebActivity"
+            android:exported="false" />
         <activity
             android:name=".activitys.BackUpbyJianGuoYunActivity"
             android:exported="false" />

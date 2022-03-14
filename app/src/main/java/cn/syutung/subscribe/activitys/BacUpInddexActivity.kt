@@ -4,12 +4,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import cn.syutung.subscribe.R
+import cn.syutung.subscribe.utils.Utils
 import kotlinx.android.synthetic.main.activity_bac_up_inddex.*
 
 class BacUpInddexActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bac_up_inddex)
+        Utils.setOrdinaryToolBar(this)
+
         backupbyjianguoyun.setOnClickListener {
             val m = Intent(
                 this,BackUpbyJianGuoYunActivity::class.java

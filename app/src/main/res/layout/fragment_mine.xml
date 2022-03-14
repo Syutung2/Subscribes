@@ -6,9 +6,11 @@
     android:orientation="vertical"
     tools:context=".fragment.MineFragment">
 
-    <ImageView
-        android:src="@mipmap/logo"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:src="@mipmap/ic_launcher_round"
         android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+
         android:layout_height="200dp" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -18,6 +20,7 @@
         android:textSize="40sp"
         android:layout_height="wrap_content"/>
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/version"
         android:layout_width="match_parent"
         android:text="version 1.0 demo"
         android:textAlignment="center"
@@ -37,6 +40,64 @@
             android:textSize="20sp"
             android:layout_height="wrap_content"/>
     </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/ysxy_button"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:text="隐私协议"
+            android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/user_button"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:text="用户协议"
+            android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/ysxy_chexiao"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:text="撤销隐私协议授权"
+            android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/licenses"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:text="开源协议"
+            android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.card.MaterialCardView>
+
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/drawCake"
         android:layout_width="match_parent"

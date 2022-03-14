@@ -19,4 +19,12 @@ interface TagDao {
     fun getbyId(
         tid:Long
     ): List<Tag>
+    @Query("SELECT * FROM tags where tid = :tid and tag =:tag")
+    fun getbyIdAndName(
+        tid:Long,
+        tag:String
+    ): List<Tag>
+    @Query("SELECT * FROM tags")
+    fun getAll(
+    ): List<Tag>
 }

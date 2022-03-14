@@ -43,6 +43,7 @@ class AddSubscribeActivity : AppCompatActivity(),AdapterView.OnItemSelectedListe
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_subscribe)
         myinflater = LayoutInflater.from(this)
+        Utils.setOrdinaryToolBar(this)
 
         val id = intent.getLongExtra("id",-1L)
         if (id == -1L){

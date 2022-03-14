@@ -8,6 +8,7 @@ import cn.syutung.subscribe.R
 import cn.syutung.subscribe.datebase.SubscribeDatebase
 import cn.syutung.subscribe.datebase.TagDatabase
 import cn.syutung.subscribe.empty.Tag
+import cn.syutung.subscribe.utils.Utils
 import com.google.android.material.chip.Chip
 import kotlinx.android.synthetic.main.activity_add_subscribe.*
 import kotlinx.android.synthetic.main.activity_chips.*
@@ -24,6 +25,8 @@ class ChipsActivity : AppCompatActivity() {
         if (id!=-1L){
             load(inflater)
         }
+        Utils.setOrdinaryToolBar(this)
+
         label_button.setOnClickListener {
             val mmm = label_text.text.toString()
             if (mmm!=""){

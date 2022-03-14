@@ -2,14 +2,12 @@ package cn.syutung.subscribe.fragment
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
@@ -24,29 +22,37 @@ import cn.syutung.subscribe.datebase.SubscribeDatebase
 import cn.syutung.subscribe.datebase.TagDatabase
 import cn.syutung.subscribe.empty.Subscribe
 import cn.syutung.subscribe.empty.Tag
-import com.google.android.material.button.MaterialButton
+import cn.syutung.subscribe.utils.Nums
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-import kotlinx.android.synthetic.main.activity_add_subscribe.*
 import java.util.*
 import kotlin.concurrent.thread
 
 
 class HomeFragment : Fragment() {
     private lateinit var myinflater : LayoutInflater
-    private val arr = arrayOf("周付费", "月付费",  "年付费")
+    private val arr = arrayOf("周付费", "月付费",  "年付费","天付费")
     private var currentIndex = 0;
     private var money_sum : Double = 0.0
     private lateinit var views : View
+    private val day_month = arrayOf(
+       0,31,28,31,30,31,30,31,31,30,31,30,31)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
     }
+    fun isRun(year:Int):Boolean{
+        var isLeapYear =
+            year % 4 == 0
+        isLeapYear = isLeapYear && (year% 100 != 0); // 年份或者能够被400整除
+        isLeapYear = isLeapYear || (year % 400 ==0);
+        return isLeapYear
+    }
     fun show(){
         currentIndex++
-        if (currentIndex > 2){
+        if (currentIndex > 3){
             currentIndex=0
         }
         loadSum()
@@ -55,12 +61,49 @@ class HomeFragment : Fragment() {
     }
     @SuppressLint("SetTextI18n")
     fun loadSum(){
+        val year = Nums.calendar.get(Calendar.YEAR)
+        val month = Nums.calendar.get(Calendar.MONTH)
+
         if (currentIndex == 0){
-            views.findViewById<TextView>(R.id.date_money_sum).text = ((money_sum /4).toString()) + "元"
+            var m = ((money_sum /4).toString())
+            if (m.length>6){
+                m = m.substring(0,6)
+            }
+            views.findViewById<TextView>(R.id.date_money_sum).text =m + "元"
         }else if (currentIndex == 1){
-            views.findViewById<TextView>(R.id.date_money_sum).text = ((money_sum).toString()) + "元"
+            var m = ((money_sum).toString())
+            if (m.length>6){
+                m = m.substring(0,6)
+            }
+            views.findViewById<TextView>(R.id.date_money_sum).text =m + "元"
         }else if (currentIndex == 2){
-            views.findViewById<TextView>(R.id.date_money_sum).text = ((money_sum*12).toString()) + "元"
+            var m = ((money_sum*12).toString())
+            if (m.length>6){
+                m = m.substring(0,6)
+            }
+            views.findViewById<TextView>(R.id.date_money_sum).text =m + "元"
+        }else if (currentIndex == 3){
+            if (month == 2){
+                if (isRun(year)){
+                    var m = ((money_sum/29).toString())
+                    if (m.length>6){
+                        m = m.substring(0,6)
+                    }
+                    views.findViewById<TextView>(R.id.date_money_sum).text =m + "元"
+                }else{
+                    var m = ((money_sum/28).toString())
+                    if (m.length>6){
+                        m = m.substring(0,6)
+                    }
+                    views.findViewById<TextView>(R.id.date_money_sum).text =m + "元"                }
+            }else{
+                var m = ((money_sum/day_month[month]).toString())
+                if (m.length>6){
+                    m = m.substring(0,6)
+                }
+                views.findViewById<TextView>(R.id.date_money_sum).text =m + "元"
+
+            }
         }
 
     }
@@ -75,25 +118,30 @@ class HomeFragment : Fragment() {
                 R.layout.subscribe,
                 linearLayout, false)
             view.findViewById<TextView>(R.id.subscribe_name).text = p.name
-            view.findViewById<TextView>(R.id.subscribe_monty).text = p.money.toString() + " 元"
 
             if (p.cycleType == 1){
                 view.findViewById<TextView>(R.id.subscribe_type).visibility=View.VISIBLE
-                view.findViewById<TextView>(R.id.subscribe_type).text = "每天"
-                money_sum += p.money*30
+                view.findViewById<TextView>(R.id.subscribe_type).text = "${p.money}元/${p.cycleTime}天"
+                view.findViewById<TextView>(R.id.subscribe_monty).text = (p.money/p.cycleTime).toString() + " 元/天"
+
+                money_sum += p.money*30/p.cycleTime
 
 
             }else if (p.cycleType == 2){
                 view.findViewById<TextView>(R.id.subscribe_type).visibility=View.VISIBLE
-                view.findViewById<TextView>(R.id.subscribe_type).text = "每月"
-                money_sum +=p.money
+                view.findViewById<TextView>(R.id.subscribe_type).text = "${p.money}元/${p.cycleTime}月"
+                view.findViewById<TextView>(R.id.subscribe_monty).text = (p.money/p.cycleTime).toString() + " 元/月"
+
+                money_sum +=p.money/p.cycleTime
 
 
 
             }else if (p.cycleType == 3){
                 view.findViewById<TextView>(R.id.subscribe_type).visibility=View.VISIBLE
-                view.findViewById<TextView>(R.id.subscribe_type).text = "每年"
-                money_sum += p.money/12
+                view.findViewById<TextView>(R.id.subscribe_type).text = "${p.money}元/${p.cycleTime}年"
+                view.findViewById<TextView>(R.id.subscribe_monty).text = (p.money/(p.cycleTime)).toString() + " 元/年"
+
+                money_sum += p.money/(12*p.cycleTime)
 
 
             }
@@ -124,8 +172,12 @@ class HomeFragment : Fragment() {
             }
             linearLayout.addView(view)
         }
-        views.findViewById<TextView>(R.id.date_money_sum).text = ((money_sum /4).toString()) + "元"
 
+        var m = ((money_sum /4).toString())
+        if (m.length>6){
+            m = m.substring(0,6)
+        }
+        views.findViewById<TextView>(R.id.date_money_sum).text =m + "元"
     }
     fun loadDatabyMoneyDesc(){
         thread {
@@ -196,7 +248,6 @@ class HomeFragment : Fragment() {
             }
         }
     }
-
     private fun loadChipGroup(findViewById: ChipGroup, inflater: LayoutInflater, p: List<Tag>,viewss: View,id: Long) {
         findViewById.removeAllViews()
         var o = 5
@@ -235,7 +286,6 @@ class HomeFragment : Fragment() {
 
 
     }
-
     override fun onResume() {
         super.onResume()
         money_sum = 0.0
