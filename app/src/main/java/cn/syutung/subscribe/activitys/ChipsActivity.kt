@@ -15,13 +15,13 @@ import java.util.*
 import kotlin.concurrent.thread
 
 class ChipsActivity : AppCompatActivity() {
-    var id = -1
+    var id = -1L
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chips)
-        id = intent.getIntExtra("id",-1)
+        id = intent.getLongExtra("id",-1)
         val inflater = LayoutInflater.from(this)
-        if (id!=-1){
+        if (id!=-1L){
             load(inflater)
         }
         label_button.setOnClickListener {

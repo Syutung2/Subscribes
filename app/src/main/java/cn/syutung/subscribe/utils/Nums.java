@@ -7,5 +7,6 @@ import cn.syutung.subscribe.R;
 
 public class Nums {
     public static Calendar calendar ;
+    public static String PACKAGENAME = "cn.syutung.subscribe";
 
 }

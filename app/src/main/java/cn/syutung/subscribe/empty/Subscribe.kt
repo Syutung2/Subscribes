@@ -7,9 +7,11 @@ import java.util.*
 
 @Entity(tableName = "subscribes")
 class Subscribe(
+    @PrimaryKey(autoGenerate = true)
+    var id: Long,
     var money: Double,
     var name: String,
-    var description :String,
+    var description :String?,
     var mode : Int ,
     // 0 or 1 0 instand of cycle Subscribe 1 instand of once
     var cycleType:Int,
@@ -19,7 +21,6 @@ class Subscribe(
     var payMode : String
     //Alipay or Wechat even Card
 ) {
-    @PrimaryKey(autoGenerate = true)
-    var id: Int = 0
+
 
 }

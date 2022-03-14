@@ -1,3 +1,4 @@
+
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -12,8 +13,8 @@ android {
         applicationId "cn.syutung.subscribe"
         minSdk 21
         targetSdk 32
-        versionCode 1001
-        versionName "1.0 DEMO"
+        versionCode 1200
+        versionName "1.2 DEMO"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -44,6 +45,7 @@ android {
 
 }
 
+
 dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     def room_version = "2.4.2"
@@ -56,6 +58,7 @@ dependencies {
     implementation "androidx.room:room-paging:2.5.0-alpha01"
     kapt   'androidx.room:room-compiler:2.4.2'
     implementation "androidx.room:room-ktx:2.3.0"
+    implementation 'com.github.thegrizzlylabs:sardine-android:0.8'
 
 
     implementation 'androidx.core:core-ktx:1.7.0'

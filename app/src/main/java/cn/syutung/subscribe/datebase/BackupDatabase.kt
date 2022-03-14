@@ -5,35 +5,38 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import cn.syutung.subscribe.dao.BackupDao
 import cn.syutung.subscribe.dao.SubsrcbleDao
+import cn.syutung.subscribe.dao.TagDao
+import cn.syutung.subscribe.empty.Backup
 import cn.syutung.subscribe.empty.Converters
 import cn.syutung.subscribe.empty.Subscribe
+import cn.syutung.subscribe.empty.Tag
 
-
-@Database(entities = [Subscribe::class], version = 2, exportSchema = false)
-@TypeConverters(Converters::class)
-abstract  class SubscribeDatebase :RoomDatabase() {
-    public  abstract val subsrcbleDao: SubsrcbleDao
+@Database(entities = [Backup::class], version = 1, exportSchema = false)
+abstract class BackupDatabase() :RoomDatabase() {
+    public  abstract val backupDao:BackupDao
 
     companion object {
-        private const val DB_NAME = "sub.db"
+        private const val DB_NAME = "backups.db"
 
         @Volatile
-        private  var instance: SubscribeDatebase? = null
+        private  var instance: BackupDatabase? = null
         @Synchronized
-        fun getInstance(context: Context): SubscribeDatebase? {
+        fun getInstance(context: Context): BackupDatabase? {
             if (instance == null) {
                 instance = create(context)
             }
             return instance
         }
 
-        private fun create(context: Context): SubscribeDatebase {
+        private fun create(context: Context): BackupDatabase {
             return Room.databaseBuilder(
                 context,
-                SubscribeDatebase::class.java,
+                BackupDatabase::class.java,
                 DB_NAME
             ).build()
         }
     }
 }
+

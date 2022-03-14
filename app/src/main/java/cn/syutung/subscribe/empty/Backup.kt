@@ -2,13 +2,13 @@ package cn.syutung.subscribe.empty
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.util.*
-@Entity(tableName = "tags")
-class Tag(
-    var tid: Long,
-    var tag: String,
+@Entity(tableName = "backup")
+class Backup (
+    var backupname: String,
+    var date: String,
 
-){
+    ){
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0
 }
+

@@ -13,7 +13,8 @@ import java.util.*
 interface SubsrcbleDao {
     @Insert
     fun insert(vararg todo: Subscribe)
-
+    @Query("delete from subscribes")
+    fun deleteAll()
     @Delete
     fun delete(subscribe : Subscribe)
 
@@ -40,7 +41,13 @@ interface SubsrcbleDao {
 
     @Query("SELECT * FROM subscribes where id = :id")
     fun getbyId(
-        id:Int
+        id:Long
+    ): Subscribe
+
+    @Query("SELECT * FROM subscribes where id = :id and name = :name")
+    fun getbyIdAndName(
+        id:Long,
+        name:String
     ): Subscribe
 
 }

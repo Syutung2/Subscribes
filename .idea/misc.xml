@@ -11,18 +11,23 @@
         <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/drawable/ic_baseline_type_24.xml" value="0.1995" />
         <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/drawable/ic_baseline_widgets_24.xml" value="0.1995" />
         <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/activity_add_subscribe.xml" value="0.25" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/activity_bac_up_inddex.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/activity_back_upby_jian_guo_yun.xml" value="0.358695652173913" />
         <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/activity_chips.xml" value="0.34270833333333334" />
         <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/activity_draw_cake.xml" value="0.15307971014492755" />
         <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/activity_main.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/backupsitem.xml" value="0.358695652173913" />
         <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/chip.xml" value="0.33" />
         <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/chipAction.xml" value="0.17603850050658562" />
         <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/chipaction.xml" value="0.25" />
         <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/chipinput.xml" value="0.33" />
         <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/fragment_home.xml" value="0.3605072463768116" />
         <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/fragment_mine.xml" value="0.22" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/recoveritem.xml" value="0.17603850050658562" />
         <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/subscribe.xml" value="0.3605072463768116" />
         <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/menu/menus.xml" value="0.3578125" />
         <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/menu/newmenu.xml" value="0.31296296296296294" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/xml/network_config.xml" value="0.358695652173913" />
       </map>
     </option>
   </component>

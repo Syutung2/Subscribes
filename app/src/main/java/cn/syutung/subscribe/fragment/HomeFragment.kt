@@ -187,7 +187,7 @@ class HomeFragment : Fragment() {
             }
         }
     }
-    fun loadChipList(id:Int,viewss:View){
+    fun loadChipList(id:Long,viewss:View){
         thread {
             val p = TagDatabase.getInstance(requireContext())?.tagDao?.getbyId(id)!!
             // 0 - 4 , 1 day ,2 month , 3 year , 0 no
@@ -197,7 +197,7 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun loadChipGroup(findViewById: ChipGroup, inflater: LayoutInflater, p: List<Tag>,viewss: View,id: Int) {
+    private fun loadChipGroup(findViewById: ChipGroup, inflater: LayoutInflater, p: List<Tag>,viewss: View,id: Long) {
         findViewById.removeAllViews()
         var o = 5
         if (p.size-1<5){

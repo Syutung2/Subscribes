@@ -14,6 +14,7 @@ import cn.syutung.subscribe.datebase.SubscribeDatebase
 import cn.syutung.subscribe.empty.Subscribe
 import cn.syutung.subscribe.utils.ModeList
 import cn.syutung.subscribe.utils.Nums
+import cn.syutung.subscribe.utils.Utils
 import com.google.android.material.datepicker.MaterialDatePicker
 import kotlinx.android.synthetic.main.activity_add_subscribe.*
 import kotlinx.android.synthetic.main.activity_add_subscribe.view.*
@@ -43,8 +44,8 @@ class AddSubscribeActivity : AppCompatActivity(),AdapterView.OnItemSelectedListe
         setContentView(R.layout.activity_add_subscribe)
         myinflater = LayoutInflater.from(this)
 
-        val id = intent.getIntExtra("id",-1)
-        if (id == -1){
+        val id = intent.getLongExtra("id",-1L)
+        if (id == -1L){
             mode = ModeList.ADD
         }else{
             mode = ModeList.EDIT
@@ -127,7 +128,8 @@ class AddSubscribeActivity : AppCompatActivity(),AdapterView.OnItemSelectedListe
                         mode = modes,
                         firstSubscribe = my,
                         payMode = subscribe_mode.text.toString(),
-                        cycleTime = oo
+                        cycleTime = oo,
+                        id = Utils.dateToTimestamp(Calendar.getInstance())
                     )
                     thread {
                         SubscribeDatebase.getInstance(this)?.subsrcbleDao?.insert(subscribe)
@@ -181,9 +183,6 @@ class AddSubscribeActivity : AppCompatActivity(),AdapterView.OnItemSelectedListe
         }
 
         if (subscribe_mode.text.toString() == ""){
-            return false
-        }
-        if (subscribe_decp.text.toString() == ""){
             return false
         }
         if (subscribe_choosedate.text == "选择日期"){

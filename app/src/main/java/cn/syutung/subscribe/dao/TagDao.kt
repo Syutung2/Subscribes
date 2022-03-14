@@ -17,6 +17,6 @@ interface TagDao {
 
     @Query("SELECT * FROM tags where tid = :tid")
     fun getbyId(
-        tid:Int
+        tid:Long
     ): List<Tag>
 }
