@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1555" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.1555" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1555" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.1555" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1555" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/drawable/ic_baseline_type_24.xml" value="0.1995" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/drawable/ic_baseline_widgets_24.xml" value="0.1995" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/activity_add_subscribe.xml" value="0.25" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/activity_chips.xml" value="0.34270833333333334" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/activity_draw_cake.xml" value="0.15307971014492755" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/activity_main.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/chip.xml" value="0.33" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/chipAction.xml" value="0.17603850050658562" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/chipaction.xml" value="0.25" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/chipinput.xml" value="0.33" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/fragment_home.xml" value="0.3605072463768116" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/fragment_mine.xml" value="0.22" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/layout/subscribe.xml" value="0.3605072463768116" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/menu/menus.xml" value="0.3578125" />
+        <entry key="..\:/Users/wangx/AndroidStudioProjects/subscribes/app/src/main/res/menu/newmenu.xml" value="0.31296296296296294" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
